@@ -5,31 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmotlaf <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/08 12:05:42 by kmotlaf           #+#    #+#             */
-/*   Updated: 2018/06/11 17:22:49 by kmotlaf          ###   ########.fr       */
+/*   Created: 2018/06/25 01:43:55 by kmotlaf           #+#    #+#             */
+/*   Updated: 2018/06/29 04:47:54 by kmotlaf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	t_list	*a_lst;
+	t_list		*list;
 
-	if (!(a_lst = (t_list *)malloc(sizeof(t_list))))
-		return (0);
-	if (content)
+	if (!(list = (t_list *)malloc(sizeof(*list))))
 	{
-		if (!(a_lst->content = ft_memalloc(content_size)))
-			return (0);
-		ft_memcpy(a_lst->content, content, content_size);
-		a_lst->content_size = content_size;
+		return (NULL);
+	}
+	if (!content)
+	{
+		free((list->content = NULL));
+		free((void *)(list->content_size = 0));
 	}
 	else
 	{
-		a_lst->content = 0;
-		a_lst->content_size = 0;
+		if (!(list->content = malloc(sizeof(content_size))))
+			return (NULL);
+		ft_memcpy(list->content, content, content_size);
+		list->content_size = content_size;
 	}
-	a_lst->next = 0;
-	return (a_lst);
+	free((void *)(list->next = NULL));
+	return (list);
 }

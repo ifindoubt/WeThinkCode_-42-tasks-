@@ -6,7 +6,7 @@
 #    By: kmotlaf <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/24 15:59:04 by kmotlaf           #+#    #+#              #
-#    Updated: 2018/06/11 11:29:53 by kmotlaf          ###   ########.fr        #
+#    Updated: 2018/06/29 06:08:18 by kmotlaf          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ SRCS		=	ft_memset.c \
 				ft_putendl_fd.c \
 				ft_putnbr.c \
 				ft_putnbr_fd.c \
+				ft_lstadd.c \
 				ft_lstnew.c \
 				ft_lstdelone.c \
 				ft_lstiter.c \
@@ -77,7 +78,9 @@ SRCS		=	ft_memset.c \
 				ft_abs.c \
 				ft_isneg.c \
 				ft_count_w.c \
-				ft_gnw.c
+				ft_gnw.c \
+				ft_strjoin2.c \
+				ft_cpy_eol.c
 
 OBJS		=	$(SRCS:.c=.o)
 
