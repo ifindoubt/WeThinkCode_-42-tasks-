@@ -1,5 +1,0 @@
-Credentials cache: API:5110
-        Principal: kmotlaf@WETHINKCODE.CO.ZA
-
-  Issued                Expires               Principal
-Mar 13 15:19:57 2018  Mar 14 01:19:57 2018  krbtgt/WETHINKCODE.CO.ZA@WETHINKCODE.CO.ZA
